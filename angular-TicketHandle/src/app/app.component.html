@@ -1,0 +1,24 @@
+<h2>Ticket Handle</h2>
+
+<table *ngIf="tickets">
+  <tr>
+    <th>Id</th>
+    <th>Phone</th>
+    <th>Governorate</th>
+    <th>City</th>
+    <th>District</th>
+    <th>Creation Date</th>
+    <th>Time</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let ticket of tickets" [ngStyle]="{'background-color': ticket.color }">
+    <td>{{ticket.id}}</td>
+    <td>{{ticket.phoneNumber}}</td>
+    <td>{{ticket.governorate}}</td>
+    <td>{{ticket.city}}</td>
+    <td>{{ticket.district}}</td>
+    <td>{{ticket.creationDate}}</td>
+    <td>{{ticket.time}}</td>
+    <td> <button (click)="ticket.color = updateTicketColor(ticket.time)"> Handle Status </button> </td>
+  </tr>
+</table>
